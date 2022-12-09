@@ -7,7 +7,7 @@ endif()
 
 add_executable(discord-bot
         discordBot.cpp
-)
+        Information.h)
 
 target_link_libraries(discord-bot
 	sleepy-discord
