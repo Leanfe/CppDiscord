@@ -61,4 +61,29 @@ bool initUTS() {
     return true;
 }
 
+std::string getDistroIcon(std::string info) {
+    if (info.find("arch") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/arch.png";
+    }
+    if (info.find("fedora") != std::string::npos ) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/fedora.png";
+    }
+    if (info.find("manjaro") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/manjaro.png";
+    }
+    if (info.find("gentoo") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/gentoo.png";
+    }
+    if (info.find("redhat") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/redhat.png";
+    }
+    if (info.find("ubuntu") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/ubuntu.png";
+    }
+    if (info.find("debian") != std::string::npos) {
+        return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/debian.png";
+    }
+    return "https://raw.githubusercontent.com/Leanfe/CppDiscord/main/img/linux.png";
+}
+
 #endif //DISCORD_BOT_INFORMATION_H

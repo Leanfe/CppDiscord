@@ -30,11 +30,15 @@ private:
 };
 
 int main() {
-    initUTS();
-    MyClientClass client("MTA0ODAwMjA1NTE5MDYyNjM0NQ.GTTh7U.fFYB1ybCD3-uJmO6SsHh1TAUe5nTL6nj99MIOo", SleepyDiscord::USER_CONTROLED_THREADS);
+    if (!initUTS())
+        perror("Error, while getting info!");
+
+    MyClientClass client("MTA0ODAwMjA1NTE5MDYyNjM0NQ.GfD8bX._nFDx6KOLDu8SHg8eS2TC0vwHJ5JiyVgmhbcGE", SleepyDiscord::USER_CONTROLED_THREADS);
 
     client.setIntents(SleepyDiscord::Intent::DIRECT_MESSAGES, SleepyDiscord::Intent::DIRECT_MESSAGE_REACTIONS);
     client.run();
+
+    return EXIT_SUCCESS;
 }
 
 Embed buildEmbed() {
@@ -48,15 +52,17 @@ Embed buildEmbed() {
 
     SleepyDiscord::EmbedImage embedImage;
 
-    embedImage.url = "";
-    embedImage.width = 128;
-    embedImage.height = 128;
+
+    std::string distroName = getDistro();
+
+    embed.thumbnail.url = getDistroIcon(distroName);
+    embed.thumbnail.width = 64;
+    embed.thumbnail.height = 64;
 
 
     embed.title = "Информация о системе.";
-    embed.description += "Дистрибутив: " + getDistro();
+    embed.description += "Дистрибутив: " + distroName;
     embed.image = embedImage;
-
     embed.fields.clear();
 
     systemEmbed.isInline = false;
