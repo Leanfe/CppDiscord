@@ -37,13 +37,13 @@ namespace Options {
         std::string machine;
 
         std::string distributive = getDistro();
-
-        [[nodiscard]] std::string getDistro() const;
-
-        std::string getDistroIcon() const;
+        std::string distroIcon = getDistroIcon();
 
     private:
         std::string cmd = R"(for f in $(find /etc -type f -maxdepth 1 \( ! -wholename /etc/os-release ! -wholename /etc/lsb-release -wholename /etc/\*release -o -wholename /etc/\*version \) 2> /dev/null); do echo ${f:5:${#f}-13}; done;)";
+        [[nodiscard]] std::string getDistro() const;
+
+        [[nodiscard]] std::string getDistroIcon() const;
     };
 
 }
