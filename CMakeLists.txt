@@ -8,13 +8,13 @@ endif()
 add_executable(discord-bot
 		src/discordBot.cpp
 		headers/EmbedHelper.h
-		src/ServiceHelper.cpp headers/service/ServiceHelper.h
+		src/service/ServiceHelper.cpp headers/service/ServiceHelper.h
 		headers/Settings.h src/Settings.cpp
-		headers/properties/Properties.h utils/properties/Properties.cpp
+		headers/properties/Properties.h src/utils/properties/Properties.cpp
 		headers/properties/PropertiesException.h headers/properties/PropertyNotFoundException.h
-		headers/properties/PropertiesParser.h utils/properties/PropertiesParser.cpp
-		headers/properties/PropertiesUtils.h utils/properties/PropertiesUtils.cpp
-		)
+		headers/properties/PropertiesParser.h src/utils/properties/PropertiesParser.cpp
+		headers/properties/PropertiesUtils.h src/utils/properties/PropertiesUtils.cpp
+		headers/IConfiguration.h headers/ConfigurationTypes.h headers/RconConfiguration.h)
 
 target_link_libraries(discord-bot
 	sleepy-discord
