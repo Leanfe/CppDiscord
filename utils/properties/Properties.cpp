@@ -20,7 +20,7 @@
  * SOFTWARE.
  */
 #include <algorithm>
-#include "Properties.h"
+#include "../../headers/properties/Properties.h"
 
 namespace cppproperties {
 

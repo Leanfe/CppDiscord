@@ -6,14 +6,14 @@ if(NOT SLEEPY_DISCORD_CMAKE)
 endif()
 
 add_executable(discord-bot
-        discordBot.cpp
-        EmbedHelper.h
-		ServiceHelper.cpp ServiceHelper.h
-		Settings.h Settings.cpp
-		properties/Properties.h properties/Properties.cpp
-		properties/PropertiesException.h properties/PropertyNotFoundException.h
-		properties/PropertiesParser.h properties/PropertiesParser.cpp
-		properties/PropertiesUtils.h properties/PropertiesUtils.cpp
+		src/discordBot.cpp
+		headers/EmbedHelper.h
+		src/ServiceHelper.cpp headers/service/ServiceHelper.h
+		headers/Settings.h src/Settings.cpp
+		headers/properties/Properties.h utils/properties/Properties.cpp
+		headers/properties/PropertiesException.h headers/properties/PropertyNotFoundException.h
+		headers/properties/PropertiesParser.h utils/properties/PropertiesParser.cpp
+		headers/properties/PropertiesUtils.h utils/properties/PropertiesUtils.cpp
 		)
 
 target_link_libraries(discord-bot

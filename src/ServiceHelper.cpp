@@ -2,8 +2,8 @@
 // Created by leanfe on 10.12.22.
 //
 
-#include "ServiceHelper.h"
-#include "Settings.h"
+#include "../headers/service/ServiceHelper.h"
+#include "../headers/Settings.h"
 
 namespace Service {
 

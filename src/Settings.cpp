@@ -2,7 +2,7 @@
 // Created by leanfe on 10.12.22.
 //
 
-#include "Settings.h"
+#include "../headers/Settings.h"
 
 
 #if defined(WINDOWS)

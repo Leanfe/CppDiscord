@@ -1,9 +1,9 @@
 #include "sleepy_discord/sleepy_discord.h"
-#include "EmbedHelper.h"
+#include "../headers/EmbedHelper.h"
 
-#include "Settings.h"
+#include "../headers/Settings.h"
 
-#include "ServiceHelper.h"
+#include "../headers/service/ServiceHelper.h"
 
 using namespace SleepyDiscord;
 
