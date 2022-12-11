@@ -2,6 +2,8 @@
 // Created by leanfe on 10.12.22.
 //
 
+#pragma once
+
 #include <utility>
 #include <iostream>
 #include <stdexcept>
@@ -39,11 +41,13 @@ namespace Options {
         std::string distributive = getDistro();
         std::string distroIcon = getDistroIcon();
 
-    private:
-        std::string cmd = R"(for f in $(find /etc -type f -maxdepth 1 \( ! -wholename /etc/os-release ! -wholename /etc/lsb-release -wholename /etc/\*release -o -wholename /etc/\*version \) 2> /dev/null); do echo ${f:5:${#f}-13}; done;)";
         [[nodiscard]] std::string getDistro() const;
 
         [[nodiscard]] std::string getDistroIcon() const;
+
+    private:
+        std::string cmd = R"(for f in $(find /etc -type f -maxdepth 1 \( ! -wholename /etc/os-release ! -wholename /etc/lsb-release -wholename /etc/\*release -o -wholename /etc/\*version \) 2> /dev/null); do echo ${f:5:${#f}-13}; done;)";
+
     };
 
 }

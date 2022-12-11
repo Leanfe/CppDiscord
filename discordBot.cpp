@@ -24,8 +24,13 @@ public:
         }
 
         if (message.content == "information") {
-
             sendMessage(options.channelID, "", buildEmbed());
+        }
+
+        if (message.content == "rcon") {
+            sendMessage(options.channelID, "Check available configs...", buildEmbed());
+            sleep(300);
+
         }
     }
 

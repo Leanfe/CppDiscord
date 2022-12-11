@@ -2,6 +2,8 @@
 // Created by leanfe on 10.12.22.
 //
 
+#pragma once
+
 #ifndef DISCORD_BOT_SERVICEHELPER_H
 #define DISCORD_BOT_SERVICEHELPER_H
 
