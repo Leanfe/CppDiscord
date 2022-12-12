@@ -3,6 +3,8 @@
 //
 #include "../../headers/RconConfiguration.h"
 
+#include "../../headers/properties/Properties.h"
+
 namespace Configuration {
 
     std::string RconConfiguration::getHost() {
@@ -17,7 +19,8 @@ namespace Configuration {
         return password;
     }
 
-    void RconConfiguration::readValues() {
-        // TODO
+    void RconConfiguration::declareValues() {
+        // Лезем в пропертиес.
     }
+
 }

@@ -36,9 +36,9 @@ public:
 
     ~PropertyNotFoundException() noexcept override = default;
 
-    const std::string& str() const noexcept { return message; }
+    [[nodiscard]] const std::string& str() const noexcept { return message; }
 
-    const char* what() const noexcept override { return message.c_str(); }
+    [[nodiscard]] const char* what() const noexcept override { return message.c_str(); }
 
 private:
     std::string message;

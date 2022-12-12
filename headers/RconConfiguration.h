@@ -14,9 +14,7 @@
 namespace Configuration {
     class RconConfiguration : IConfiguration {
     public:
-        explicit RconConfiguration(std::string id) : IConfiguration(RCON, std::move(id)) {
-            readValues();
-        }
+        explicit RconConfiguration(std::string id) : IConfiguration(RCON, std::move(id)) {}
 
         std::string getHost();
         std::string getPort();
@@ -27,7 +25,8 @@ namespace Configuration {
         std::string port;
         std::string password;
 
-        void readValues();
+        void declareValues() override;
+
     };
 }
 

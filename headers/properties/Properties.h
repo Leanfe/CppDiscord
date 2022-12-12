@@ -42,17 +42,17 @@ public:
      * This method throws a PropertyNotFoundException when a given key does not
      * exist.
      */
-    std::string GetProperty(const std::string& key) const;
+    [[nodiscard]] std::string GetProperty(const std::string& key) const;
 
     /**
      * Gets the property value from a given key. Use a default value if not found.
      */
-    std::string GetProperty(const std::string& key, const std::string& defaultValue) const;
+    [[nodiscard]] std::string GetProperty(const std::string& key, const std::string& defaultValue) const;
 
     /**
      * Gets the list of property names.
      */
-    std::vector<std::string> GetPropertyNames() const;
+    [[nodiscard]] std::vector<std::string> GetPropertyNames() const;
 
     /**
      * Adds a new property. If the property already exists, it'll overwrite

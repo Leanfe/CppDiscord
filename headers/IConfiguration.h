@@ -9,6 +9,7 @@
 
 #include <string>
 #include <filesystem>
+#include <utility>
 #include "ConfigManager.h"
 #include "ConfigurationTypes.h"
 
@@ -17,7 +18,7 @@ namespace Configuration {
     public:
         IConfiguration(ConfigurationType type, std::string id) {
             this->type = type;
-            this->id = id;
+            this->id = std::move(id);
 
             openFile();
         }
@@ -38,10 +39,12 @@ namespace Configuration {
             if (config == nullptr) {
                 perror("ERROR!");
             }
-            if (isConfigEmpty()) {
-                needDefaultValues = true;
-            }
+
+            readValues();
         }
+
+    protected:
+        std::string path;
 
         bool isConfigEmpty() {
             fseek(config,0,SEEK_END);
@@ -54,9 +57,15 @@ namespace Configuration {
             return true;
         }
 
-    protected:
-        std::string path;
-        bool needDefaultValues = false;
+
+        void readValues() {
+            if (isConfigEmpty()) {
+                declareValues();
+            }
+        }
+
+        virtual void declareValues() = 0;
+
     };
 }
 
